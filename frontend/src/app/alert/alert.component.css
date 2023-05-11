@@ -1,0 +1,19 @@
+.alert-wrapper{
+    width:100%;
+    font-size: calc(1vw + 0.40vh + 0.40em);
+    text-align: center;
+    border:none;
+    outline : 1px solid rgb(152, 255, 89);
+    color:rgb(152, 255, 89);
+    color:black;
+    padding:1%;
+}
+.close-button{
+    background-color: inherit;
+    border: none;
+    outline:none;
+    margin-right: 1vw;
+    font-size:inherit;
+    color:red;
+    cursor:pointer;
+}

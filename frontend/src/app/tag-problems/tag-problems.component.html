@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div *ngIf="isErrorFetchingProblems">
+    Could not fetch problems , please try again ...
+</div>
+
+<div *ngIf="isFetchingProblems">
+    
+    <app-loading
+        [text]="'Loading Problems ... '"
+    >
+    </app-loading>
+</div>
+
+
+<div>
+    <app-problem-list [problemList]="problemList">
+
+    </app-problem-list>
+</div>

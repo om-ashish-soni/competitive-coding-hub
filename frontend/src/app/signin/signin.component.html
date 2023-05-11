@@ -1,0 +1,85 @@
+
+<div *ngIf="isSigningIn">
+    <app-loading
+        [text]="'Signing you in ...'"
+    >
+    </app-loading>
+</div>
+<div *ngIf="!isSigningIn">
+    <app-rolling>
+    </app-rolling>
+</div>
+<div class="signin-wrapper">
+
+    <div *ngIf="isInvalidCred" class="invalid-cred">
+        <p>{{errorMessage}}</p>
+        <p>Please enter valid credentials</p>
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSignin(f)" novalidate>
+        <center>
+            <tr>
+                <td class="td-label">username </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="username" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">password </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="password" name="password" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">fullname </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="fullname" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">country </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="country" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">state </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="state" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">city </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="city" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">profession </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="profession" ngModel required />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td class="td-label">institute </td><td class="td-label"> : </td>
+                <td class="td-content">
+                    <input type="text" name="institute" ngModel required />
+                </td>
+                <br />
+            </tr>
+        </center>
+        <button>Signin</button>
+    </form>
+    <a routerLink="/auth/login">
+        <button>
+            Not a user ? login
+        </button>
+    </a>
+
+</div>

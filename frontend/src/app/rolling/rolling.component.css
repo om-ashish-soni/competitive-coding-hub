@@ -1,0 +1,36 @@
+.rolling-wrapper {
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    margin:3%;
+}
+
+.rolling-logo {
+    min-width: 15%;
+    max-width: 15%;
+    /* vertical-align: middle; */
+    animation: rolling-frame 5s infinite;
+    animation-direction: alternate;
+    border-radius: 10px;
+    margin:1%;
+}
+
+.rolling-text {
+    min-width: 20%;
+    max-width: 20%;
+    color:rgb(17, 17, 166);
+    font-weight: 500;
+    font-variant: small-caps;
+    font-size: x-large;
+    color: rgb(66, 66, 66);
+    background-image: linear-gradient(to bottom right,rgb(255, 216, 145),white,rgb(158, 255, 158));    
+    border-radius:5vw;
+    padding:2.5%;
+}
+
+@keyframes rolling-frame{
+    0% {margin-left:0%;transform: rotate(0deg);}
+    33%{margin-left:15%;transform: rotate(180deg);}
+    66% {margin-left:45%;transform: rotate(0deg);}
+    100% {margin-left:50%;transform: rotate(-180deg);}
+  }

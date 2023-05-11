@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="isInValidProfile ; else loadingProfile">
+    Please provide valid username ...
+</ng-container>
+
+<ng-template #loadingProfile>
+    <ng-container *ngIf="isFetchingProfile ; else profileDetails">
+        <!-- Fetching profile details ...  -->
+        <app-loading [text]="'fetching profile ... '">
+
+        </app-loading>
+    </ng-container>
+</ng-template>
+<ng-template #profileDetails>
+    <div class="profile-wrapper">
+    <center>
+        <div>
+        <p class="heading-username">{{profile.username}}</p>
+        <p>{{profile.fullname}},  {{profile.city}}, {{profile.state}}, {{profile.country}}</p>
+        <p>from , {{profile.institute}}</p>
+    </div>
+        <table class="profile-table">
+            <!-- <td>username : </td> -->
+
+            <tr>
+                <td></td>
+                <td>fullname : </td>
+                <td>{{profile.fullname}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>country : </td>
+                <td>{{profile.country}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>state : </td>
+                <td>{{profile.state}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>city : </td>
+                <td>{{profile.city}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>profession : </td>
+                <td>{{profile.profession}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>institute : </td>
+                <td>{{profile.institute}}</td>
+                <td></td>
+            </tr>
+
+        </table>
+    </center>
+    </div>
+</ng-template>
+<router-outlet></router-outlet>

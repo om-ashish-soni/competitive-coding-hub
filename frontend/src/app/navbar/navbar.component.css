@@ -1,0 +1,26 @@
+.myNavbar{
+    font-size:calc(1vw + 0.40vh + 0.40em);
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top:1.40vh;
+    padding-bottom:1.40vh;
+    border-bottom: 0.50px solid silver;
+}
+.logo{
+    height: 1.40em;
+    width: 1.80em;
+    align-self: stretch;
+    vertical-align: middle;
+}
+a{
+    color:rgb(40, 40, 40);
+    text-decoration: none;
+    align-self:stretch;
+    vertical-align: middle;
+}
+a:visited{
+    color:rgb(40, 40, 40);
+}
+a:hover{
+    color:rgb(255, 166, 0);
+}

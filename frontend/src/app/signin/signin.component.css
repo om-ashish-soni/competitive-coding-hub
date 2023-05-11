@@ -1,0 +1,88 @@
+.signin-wrapper{
+    margin-left:20%;
+    margin-right:20%;
+    width:60%;
+    font-size:calc(1vw+1vh+1em);
+    text-align: center;
+    align-items: center;
+}
+.invalid-cred{
+    font-size:large;
+    color:orangered;
+}
+form{
+    font-size:large;
+}
+button{
+    width:100%;
+    background-color: white;
+    font-size:x-large;
+    color:orange;
+    padding:1vh;
+    border-radius:1vh;
+    outline:1px solid orange;
+    border:none;
+    margin-top:1vh;
+}
+button:hover{
+    background-color:orange;
+    color:white;
+    cursor:pointer
+}
+input{
+    outline:none;
+    border:none;
+    width:100%;
+    border-bottom:1px solid rgb(51, 51, 51);
+    font-size:large;
+}
+tr{
+    background-color:    rgb(249, 249, 249);
+}
+td{
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top:1vh;
+    padding-bottom:1vh;
+    
+    vertical-align: middle;
+    align-content: center;
+    text-align: justify;
+}
+.td-label{
+    width:20%;
+}
+.td-content{
+    width:60%;
+}
+
+label{
+    /* font-size:calc(1vw+1vh+1em); */
+    
+}
+a{
+    color:rgb(40, 40, 40);
+    align-self:stretch;
+    vertical-align: middle;
+    text-decoration: none;
+    color:rgb(64, 129, 233);
+}
+a:visited{
+    color:rgb(59, 127, 238);
+}
+a:hover{
+    color:rgb(64, 129, 233);
+}
+.redirect-wrapper{
+    margin:5%;
+    text-align: center;
+    align-items: center;
+    width:100%;
+    
+    outline:1px solid rgb(64, 129, 233);
+    cursor:pointer;
+}
+.redirect-wrapper:hover{
+    background-color: rgb(64, 129, 233);
+    color:white;
+}

@@ -1,0 +1,126 @@
+<app-navbar></app-navbar>
+<div class="problem-wrapper">
+    <ng-container *ngIf="isInValidProblemCode ; else loadingProblem">
+        Please enter a valid problem code.
+    </ng-container>
+    <ng-template #loadingProblem>
+        <ng-container *ngIf="isFetchingProblem ; else problemDetails">
+            <!-- Fetching Problem ... -->
+            <app-loading [text]="'Fetching Problem ... '">
+
+            </app-loading>
+        </ng-container>
+    </ng-template>
+    <ng-template #problemDetails>
+        <tr>
+            <td>
+                {{problem.problemcode.toLocaleUpperCase().replace('_',' ')}}
+                &nbsp;&nbsp;
+                (
+                <a routerLink="/problems/difficulty/{{problem.difficulty}}" target="_blank">
+                    {{problem.difficulty}}
+                </a>
+                )
+            </td>
+        </tr>
+        <tr>
+            <div class="problem-content">
+                <p *ngFor="let cline of problemDisplay.description" [ngValue]="cline">
+                    {{cline}}
+                </p>
+            </div>
+        </tr>
+
+        <br />
+
+        <tr>
+            <td>constraints : </td>
+        </tr>
+        <div class="problem-content">
+            <p *ngFor="let c_constraint of problemDisplay.constraints" [ngValue]="c_constraint">
+                {{c_constraint}}
+            </p>
+        </div>
+        <tr>
+            <td>sample input : </td>
+        </tr>
+        <div class="problem-content">
+            <p *ngFor="let cinput of problemDisplay.sampleinput" [ngValue]="cinput">
+                {{cinput}}
+            </p>
+        </div>
+
+        <br />
+
+        <tr>
+            <td>
+                sample output :
+            </td>
+        </tr>
+        <div class="problem-content">
+            <p *ngFor="let coutput of problemDisplay.sampleoutput" [ngValue]="coutput">
+                {{coutput}}
+            </p>
+        </div>
+
+        <br />
+
+        
+        <div>
+            <tr>
+                <td>
+                    <label>setter:</label>
+                </td>
+                <td>
+                    <a routerLink="/profile/{{problem.setter}}" target="_blank">{{problem.setter}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>tester:</label>
+                </td>
+                <td>
+                    <a routerLink="/profile/{{problem.tester}}" target="_blank">{{problem.tester}}</a>
+                </td>
+            </tr>
+        <!-- <div *ngIf="isSubmissionsUpdated"> -->
+            <tr>
+                <td>
+                    correct submissions:
+                </td>
+                <td #correctSubmissions>
+                    {{problem.correctSubmissions}}
+                </td>
+            </tr>
+        <!-- <div *ngIf="isSubmissionsUpdated"> -->
+            <tr>
+                <td>
+                    total submissions:
+                </td>
+                <td #totalSubmissions>
+                    {{problem.totalSubmissions}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    tags :
+                </td>
+                <td>
+
+                    <a *ngFor="let ctag of problem.tags ; let i=index" routerLink="/problems/tags/{{ctag}}"
+                        target="_blank">
+                        {{ctag}}
+                        {{
+                        (i+1 < problem.tags.length)?(' , '):(' ')
+                        }}
+                    </a>
+                </td>
+            </tr>
+        </div>
+        <br/>
+        <br/>
+        <app-editor #editorComponent [isProblem]="true" [problemcode]="problem.problemcode"
+            [sampleinput]="problem.sampleinput" [setProblem]="setProblem">
+        </app-editor>
+    </ng-template>
+</div>

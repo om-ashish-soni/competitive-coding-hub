@@ -1,0 +1,55 @@
+.problem-list{
+    font-size:calc(1vw + 0.40vh + 0.40em);
+    margin-left:4vw;
+    margin-right:4vw;
+    margin-top:2vw;
+    margin-bottom:2vw;
+}
+.problem-list:tr{
+    font-size:calc(1vw + 0.40vh + 0.40em);
+}
+
+.head-row{
+    
+    font-size:calc(1vw + 0.40vh + 0.40em);
+    font-weight: 300;
+    color:rgb(99, 97, 97);
+    text-align: center;
+}
+tr{
+    background-color:    rgb(249, 249, 249);
+    
+}
+td{
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    min-width: 20%;
+    vertical-align: middle;
+    align-content: center;
+    text-align: justify;
+}
+.easy{
+    color:green;
+}
+.medium{
+    color:orange;
+}
+.hard{
+    color:rgb(184, 26, 26);
+}
+a{
+    text-decoration: none;
+}
+a.problem-code{
+    color:rgb(40, 40, 40);
+    align-self:stretch;
+    vertical-align: middle;
+}
+a.problem-code:visited{
+    color:rgb(40, 40, 40);
+}
+a.problem-code:hover{
+    color:rgb(64, 129, 233);
+}

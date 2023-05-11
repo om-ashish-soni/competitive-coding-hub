@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+<div>
+    <p *ngIf="isInvalidProblemCode">
+        this problem code is already taken please enter some unique problem.
+    </p>
+    <p *ngIf="isInValidForm">
+        {{msg}}
+    </p>
+    <div class="set-problem-wrapper">
+        <form #f="ngForm" class="set-problem-form" (ngSubmit)="onSubmitProblem(f)">
+            <div class="input-wrapper">
+                <label>problemcode : </label>
+                <input class='form-control' type="text" name="problemcode" ngModel required />
+                <br />
+            </div>
+
+            <label>description : </label>
+            <br />
+
+            <textarea class='form-control' type="password" name="description" ngModel required>
+            </textarea>
+            <br />
+
+            <label>constraint : </label>
+            <br />
+
+            <textarea class='form-control' type="text" name="constraints" ngModel required>
+            </textarea>
+            <br />
+
+            <label>input : </label>
+            <br />
+
+            <textarea class='form-control' type="text" name="input" ngModel required>
+            </textarea>
+            <br />
+
+            <label>output : </label>
+            <br />
+
+            <textarea class='form-control' type="text" name="output" ngModel required>
+            </textarea>
+            <br />
+
+            <label>sample input : </label>
+            <br />
+
+            <textarea class='form-control' type="text" name="sampleinput" ngModel required>
+            </textarea>
+            <br />
+
+            <label>sample output : </label>
+            <br />
+
+            <textarea class='form-control' type="text" name="sampleoutput" ngModel required>
+            </textarea>
+            <br />
+
+            <label>tags (give comma seperated tags , as per available tags): </label>
+            <br />
+            <textarea class='form-control' type="text" name="tags" ngModel required>
+        </textarea>
+            <br />
+
+            <div class="input-wrapper">
+                <label>difficulty : </label>
+                <select [(ngModel)]="difficulty" name="difficulty" required>
+                    <option [ngValue]="'easy'">easy</option>
+                    <option [ngValue]="'medium'">medium</option>
+                    <option [ngValue]="'hard'">hard</option>
+                </select>
+                <br />
+            </div>
+
+            <div class="input-wrapper">
+                <label>time limit (seconds) : </label>
+                <input type="text" name="timelimit" ngModel required />
+                <br />
+            </div>
+
+            <div class="input-wrapper">
+                <label>memory limit (MB) : </label>
+                <input type="text" name="memorylimit" ngModel required />
+                <br />
+            </div>
+
+            <div class="input-wrapper">
+                <label>problem setter : </label>
+                <input type="text" name="setter" ngModel required />
+                <br />
+            </div>
+
+            <div class="input-wrapper">
+                <label>problem tester : </label>
+                <input type="text" name="tester" ngModel required />
+                <br />
+            </div>
+
+
+
+            <button>Submit</button>
+        </form>
+        <div class="notes">
+            <br/>
+            <label>
+                Available Tags : 
+            </label>
+            <br/><br/>
+            <div>
+                <span *ngFor="let ctag of problemtags ; let i=index">
+                    <a routerLink="/problems/tags/{{ctag}}" target="_blank">
+                        {{ctag}}
+                        {{
+                        (i+1 < problemtags.length)?(' , '):(' ')
+                    }}
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+</div>

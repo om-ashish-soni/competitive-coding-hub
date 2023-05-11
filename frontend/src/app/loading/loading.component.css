@@ -1,0 +1,31 @@
+.loading-wrapper {
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    margin:5%;
+}
+
+.loading-logo {
+    min-width: 20%;
+    max-width: 20%;
+    /* vertical-align: middle; */
+    animation: logo 10s infinite;
+    animation-direction: alternate;
+    border-radius: 10px;
+}
+
+.loading-text {
+    min-width: 20%;
+    max-width: 20%;
+    /* vertical-align: middle; */
+    font-size: x-large;
+    color: rgb(66, 66, 66);
+    
+}
+
+@keyframes logo{
+    0% {margin-left:0%;margin-top:15%;width:7vw;transform: rotate(360deg);}
+    33%{margin-left:30%;margin-top:0%;width:15vw;transform: rotate(180deg);}
+    66% {margin-left:60%;margin-top:15%;width:10vw;transform: rotate(0deg);}
+    100% {margin-left:30%;margin-top:30%;width:7vw;transform: rotate(-360deg);}
+  }

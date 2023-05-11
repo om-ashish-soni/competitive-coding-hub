@@ -1,0 +1,30 @@
+.profile-wrapper{
+    margin-top:5%;
+}
+.profile-table{
+    /* margin-left:10%;
+    margin-right:10%; */
+    /* min-width:80%; */
+    font-size:calc(1vw + 0.40vh + 0.40em);
+    align-items: center;
+}
+
+.heading-username{
+    font-weight: 400;
+    font-size: xx-large;
+    align-items: center;
+    margin:2%;  
+}
+tr{
+    align-items: center;
+    margin:2%;
+    background-color:    #fefefe;
+}
+td{
+    padding-top:5vh;
+    /* padding-left:10%; */
+    min-width: 10%;
+    vertical-align: middle;
+    /* align-content: center; */
+    /* text-align: justify; */
+}

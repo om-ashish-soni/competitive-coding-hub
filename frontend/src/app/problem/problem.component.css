@@ -1,0 +1,40 @@
+.problem-wrapper{
+    margin-left:2.5%;
+    margin-right:2.5%;
+    width:95%;
+    margin-top:2%;
+    margin-bottom:2%;
+    font-size:calc(1vw + 0.40vh + 0.40em);
+}
+a{
+    color:rgb(40, 40, 40);
+    align-self:stretch;
+    vertical-align: middle;
+    text-decoration: none;
+    color:rgb(64, 129, 233);
+}
+a:visited{
+    color:rgb(59, 127, 238);
+}
+a:hover{
+    color:rgb(64, 129, 233);
+}
+tr{
+    background-color:    rgb(249, 249, 249);
+}
+td{
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-bottom:2vh;
+}
+label{
+    min-width: '50%';
+}
+.problem-content{
+    margin-left:5%;
+    margin-top:2%;
+    width:100%;
+    overflow: auto;
+    min-height: 20vh;
+    display: block;
+}

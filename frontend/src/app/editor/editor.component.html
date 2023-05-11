@@ -1,0 +1,90 @@
+<!-- <p>editor works!</p> -->
+
+<div class="editor-wrapper">
+    <div *ngIf="isRunning ;">
+        <app-loading [text]="'Running your code ...'">
+        </app-loading>
+        <!-- <app-rolling [text]="'Running your code ...'">
+        </app-rolling> -->
+    </div>
+    <div *ngIf="isSubmitting">
+        <app-loading [text]="'Judging your code ...'">
+        </app-loading>
+    </div>
+    <!-- <div class="alert-container">
+        <app-alert [text]="'backup is taken'" [isHidden]="false">
+        </app-alert>
+    </div> -->
+
+    <div>
+        <navbar class="navbar">
+            <select [(ngModel)]="lang" (change)="changeLang(lang)">
+                <option *ngFor="let clang of langs" [ngValue]="clang">{{clang}}</option>
+            </select>
+
+            <select [(ngModel)]="theme" (change)="changeTheme(theme)">
+                <option *ngFor="let ctheme of themes" [ngValue]="ctheme">{{ctheme}}</option>
+            </select>
+
+            <select [(ngModel)]="fontsize" (change)="changeFontSize(fontsize)">
+                <option *ngFor="let cfontsize of fontsizes" [ngValue]="cfontsize">{{cfontsize}}</option>
+            </select>
+
+            <button (click)="backupCode()" class="nav-above-editor">
+                backup
+            </button>
+            
+            <button #runTrigger (click)="runCode()">
+                run
+            </button>
+            <button #submitTrigger (click)="isProblem?submitCode():runCode()">
+                submit
+            </button>
+        </navbar>
+        <div *ngIf="isProblem && !isSubmitting && isSubmitted" class="status-box" #statusComponent>
+            <center>
+                <div [class]="status">
+                    {{status}}
+                </div>
+            </center>
+        </div>
+        <div class="editor-container">
+            <div class="ace-editor-split">
+            <div class="app-ace-editor" [ngStyle]="{'font-size': fontsize}" #editor (keydown.control.enter)="runCode()"
+                (keydown.control.shift.enter)="isProblem?submitCode():runCode()" (keydown.control.s)="backupCode()">
+            </div>
+            <navbar class="navbar">
+                <button #runTrigger [class]="isRan?'third':'half'" (click)="runCode()" class="below-button">
+                    run
+                </button>
+                <button [class]="isRan?'third':'half'" #submitTrigger [class]="isRan?'third':'half'" (click)="isProblem?submitCode():runCode()" class="below-button">
+                    submit 
+                </button>
+                <button *ngIf="isRan" [class]="isRan?'third':''" class='below-button' disabled>
+                    {{(executionTime/100.00).toFixed(2)}} sec
+                </button>
+            </navbar>
+            </div>
+            <div class="io-container">
+                <div class="input-container">
+                    <label>input : </label><br />
+                    <textarea [ngModel]="inp" (ngModelChange)="setInput($event)">
+                    </textarea>
+                </div>
+                <div class="output-container">
+                    <label>output : </label><br />
+                    <textarea [ngModel]="op" #outputBox disabled>
+                    </textarea>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div *ngIf="isProblem && !isSubmitting && isSubmitted" class="status-box" #statusComponent>
+            <center>
+                <div [class]="status">
+                    {{status}}
+                </div>
+            </center>
+        </div>
+    </div>
+</div>

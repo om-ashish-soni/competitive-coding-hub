@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="isFetchingProblems ; else errorMessage">
+    <!-- Fetching Problems ... -->
+    <app-loading
+        [text]="'getting problems ... '"
+    >
+
+    </app-loading>
+</ng-container>
+
+<ng-template #errorMessage>
+    <ng-container *ngIf="isErrorFetchingProblems ; else problemListDetails">
+        Could not fetch problems , please try again ...
+    </ng-container>
+</ng-template>
+<ng-template #problemListDetails>
+    <app-problem-list [problemList]="problemList">
+
+    </app-problem-list>
+</ng-template>
+<router-outlet></router-outlet>

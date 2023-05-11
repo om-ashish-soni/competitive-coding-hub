@@ -1,0 +1,38 @@
+<!-- <p>problem-list works!</p> -->
+<table class="problem-list">
+    <!-- <tr colspan="2" class="head-row">
+        <td>
+            <label>Difficulty</label>
+            &nbsp; : &nbsp;
+            <select [(ngModel)]="difficulty" (change)="changeDifficulty(difficulty)">
+                <option *ngFor="let cdifficulty of difficulties" [ngValue]="cdifficulty">{{cdifficulty}}</option>
+            </select>
+        </td>
+        <td>
+            <label>Tags</label>
+            &nbsp; : &nbsp;
+            <select>
+                <option>all</option>
+                
+            </select>
+        </td>
+    </tr> -->
+    <tr class="head-row">
+        <td>Problem</td>
+        <td>Solution</td>
+        <td>Difficulty</td>
+        <td>Acceptance</td>
+    </tr>
+    <br/>   
+    <tr *ngFor="let cproblem of problemList;let i = index" [attr.data-index]="i" [ngValue]="cproblem">
+        <a class="problem-code" routerLink="/problem/{{cproblem.problemcode}}">{{i+1}}.  {{cproblem.problemcode.split('_').join(' ')}}</a>
+        <td>-</td>
+        <td >
+            <a [ngClass]="cproblem.difficulty" routerLink="/problems/difficulty/{{cproblem.difficulty}}">
+                {{cproblem.difficulty}}
+            </a>
+        </td>
+        <!-- {{cproblem.correctSubmissions}} {{cproblem.totalSubmissions}} -->
+        <td>{{((cproblem.correctSubmissions*100.00)/(cproblem.totalSubmissions?cproblem.totalSubmissions:1.00)).toFixed(2)}} % </td>
+    </tr>
+</table>
