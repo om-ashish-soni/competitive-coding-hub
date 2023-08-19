@@ -31,7 +31,7 @@ const cppExecutor = async (dirpath, lang, code, input,timelimit=5000,memorylimit
         }
 
         // const compileCommand=`g++-7 ${sourceFilePath} -o ${executableFilePath}`;
-        const compileCommand = `g++-7 ${sourceFilePath} -o ${executableFilePath}`;
+        const compileCommand = `g++ ${sourceFilePath} -o ${executableFilePath}`;
         const compileResult = await processor(compileCommand);
         let compileOutput = compileResult.stdout;
         let compileError = compileResult.stderr;
