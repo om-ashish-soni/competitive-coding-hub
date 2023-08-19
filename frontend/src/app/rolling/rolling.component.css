@@ -23,7 +23,7 @@
     font-variant: small-caps;
     font-size: x-large;
     color: rgb(66, 66, 66);
-    background-image: linear-gradient(to bottom right,rgb(255, 216, 145),white,rgb(158, 255, 158));    
+    /* background-image: linear-gradient(to bottom right,rgb(255, 216, 145),white,rgb(158, 255, 158));     */
     border-radius:5vw;
     padding:2.5%;
 }

@@ -1,6 +1,7 @@
 import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  username=''
+  applicationName=environment.applicationName;
+  username='';
   constructor(private router : Router,private cookieService:CookieService) { }
 
   ngOnInit(): void {
